@@ -558,6 +558,30 @@ const BetForm = () => {
       </div>
       <button onClick={handlePlaceBet}>Realizar Aposta</button>
       <div>
+      docker-compose.yml
+      version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:16
+    container_name: nexora_postgres
+    restart: always
+
+    environment:
+      POSTGRES_USER: nexora
+      POSTGRES_PASSWORD: nexora123
+      POSTGRES_DB: nexora_db
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
+  docker-compose.yml
         <strong>Saldo disponível: R$ {balance.toFixed(2)}</strong>
       </div>
     </div>
